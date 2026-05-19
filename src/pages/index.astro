@@ -1,0 +1,75 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProjectRow from '../components/ProjectRow.astro';
+import { Image } from 'astro:assets';
+import elliottHero from '../assets/images/elliott-hero.jpg';
+
+const title = 'Oregon Websites & Watersheds Project — orww.store';
+const description = 'Since 1996, ORWW has built one of the longest continuously-running educational archives on the internet. This is a modern presentation layer over selected portions of that archive.';
+
+const projects = [
+  {
+    year: '2023',
+    title: '1828 Umpqua Memorial Project',
+    href: '/umpqua-1828/',
+    description: 'Reconstructing the burial site of the Smith-Jackson-Sublette brigade members killed in the July 1828 Umpqua massacre, and the route Jedediah Smith and his three survivors took to Fort Vancouver. Listed with the Oregon Commission on Historic Cemeteries March 29, 2023; Memorial Stone dedicated October 28, 2023. Builds on Wayne Knauf and Don Whereat\'s field-mapping work from 2000-2001.',
+  },
+  {
+    year: '2020',
+    title: 'Osbornes Project',
+    href: '/osbornes/',
+    description: 'GPS-documented panoramic photographs from 1930s fire-lookout towers, paired with contemporary repeats. A landscape-change time series across ten Oregon counties, capturing what 90 years of fire management, forestry, and policy have done to the Pacific Northwest\'s forests. Bob Zybach took most of the contemporary photographs himself, on foot.',
+  },
+  {
+    year: '2017',
+    title: 'Elliott State Forest',
+    href: '/elliott/',
+    description: 'The 25-year story of Oregon\'s first state forest — granted to the Common School Fund in 1859, sold and reversed in 2017, decoupled from the Common School Fund in 2022, and now operated as the Elliott State Research Forest. ORWW\'s Elliott archive is the deepest historical record of the forest in public hands: 61 reference PDFs, multiple oral histories, hundreds of maps and photographs, and Bob Zybach\'s continuous documentation since the Giesy Plan Alternative he co-authored with Wayne Giesy in 2017.',
+  },
+  {
+    year: '2014',
+    title: 'Letitia Carson',
+    href: '/letitia-carson/',
+    description: 'The first Black woman to file a Donation Land Claim in Oregon — and to defeat the white estate that tried to take it from her. ORWW\'s Letitia Carson archive is the most comprehensive single repository of primary-source documentation on her life: 42 reference works, hundreds of primary documents organized by location and case from North Carolina (1824) through Douglas County, Oregon (1922), and an in-progress biography by Bob Zybach.',
+  },
+];
+---
+<BaseLayout title={title} description={description} activeNav="home">
+  <figure class="border-b border-orww-rule">
+    <Image
+      src={elliottHero}
+      alt="Elliott State Forest canopy"
+      widths={[1200, 1600, 2000]}
+      sizes="(min-width: 1024px) 1024px, 100vw"
+      format="webp"
+      quality={80}
+      class="w-full h-auto max-h-[520px] object-cover"
+    />
+  </figure>
+
+  <section class="mx-auto max-w-measure px-4 sm:px-6 py-10 sm:py-14">
+    <p class="text-lg leading-relaxed">
+      Since 1996, the Oregon Websites and Watersheds Project has built one of the longest continuously-running educational archives on the internet — a working record of Pacific Northwest forestry, fire history, watershed stewardship, and the people and places that shape Oregon's landscapes. ORWW is a 501(c)(3) educational nonprofit; its substantive research and proprietary photography also live under the NW Maps Co. imprint. The original ORWW website at <a href="http://www.orww.org/">www.orww.org</a> has been maintained continuously since January 15, 1997, and remains the canonical archive. This site, www.orww.store, is a modern presentation layer over selected portions of that archive — an experiment in making thirty years of fieldwork more discoverable for readers, researchers, journalists, teachers, and the institutions that license historical-fire-baseline data for current work. Contact Bob Zybach directly for licensing inquiries, expert-witness work, speaking engagements, or substantive collaboration.
+    </p>
+  </section>
+
+  <section class="mx-auto max-w-wide px-4 sm:px-6 pb-12">
+    <h2 class="font-serif text-2xl text-orww-navy mb-6 pb-2 border-b border-orww-rule">
+      Projects
+    </h2>
+    {projects.map((p) => (
+      <ProjectRow
+        year={p.year}
+        title={p.title}
+        href={p.href}
+        description={p.description}
+      />
+    ))}
+  </section>
+
+  <section class="mx-auto max-w-measure px-4 sm:px-6 pb-12">
+    <p class="italic text-sm text-orww-ink-mute leading-relaxed">
+      The full ORWW archive — three decades of fieldwork, document scans, photo galleries, video, and the OR_LYNX local-information database — remains at <a href="http://www.orww.org/">www.orww.org</a> as it has been maintained continuously since 1997. This site presents selected topics in modern form. Both sites are operated by the same project.
+    </p>
+  </section>
+</BaseLayout>

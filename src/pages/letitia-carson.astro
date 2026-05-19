@@ -1,0 +1,63 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import TopicHero from '../components/TopicHero.astro';
+import SubsectionList from '../components/SubsectionList.astro';
+import LicensingCTA from '../components/LicensingCTA.astro';
+
+const title = 'Letitia Carson, 1845–1888 — orww.store';
+const description = 'The first Black woman to file a Donation Land Claim in Oregon — and to defeat the white estate that tried to take it from her. ORWW\'s archive is the most comprehensive single repository of primary-source documentation on her life.';
+
+const subsections = [
+  {
+    name: 'Library (42 reference PDFs + Kirkpatrick 2014 film promo)',
+    description: 'Abdill, Banks 2023, BLM Oregon 1862–2012, Chittenden 1903, Lockley 1924, Palmer 1906, Paxton 1897, WPA records 1846–1854, and dozens more.',
+    deepLink: 'http://www.orww.org/History/Letitia_Carson/Library/',
+  },
+  {
+    name: 'Documentation (200+ primary documents, organized by location and case)',
+    description: '1824–1851 North Carolina; 1836–1851 Platte County, Missouri; 1845–1853 Soap Creek; 1852–1857 Oregon Probate; 1853–1922 Douglas County; the Carson v. Smith case files.',
+    deepLink: 'http://www.orww.org/History/Letitia_Carson/Documentation/',
+  },
+  {
+    name: 'Photographs and illustrations',
+    description: 'Period photographs and historical illustrations from Benton, Douglas, and Umatilla counties; primary-source portraiture; illustrations including Belfast 1810, the Stowe 1852 Uncle Tom\'s Cabin connection, the Warre 1845 Oregon City sketch.',
+    deepLink: 'http://www.orww.org/History/Letitia_Carson/Photographs/',
+  },
+  {
+    name: 'Biography (in progress)',
+    description: '22-chapter outline, mapped from the Kentucky-Missouri slave trade of 1775–1845 through Letitia\'s life in Oregon. Currently scaffolded; chapters being drafted by Bob.',
+  },
+];
+---
+<BaseLayout title={title} description={description} activeNav="topics">
+  <article class="mx-auto max-w-wide px-4 sm:px-6 py-10">
+    <header class="mb-8 max-w-measure">
+      <p class="font-sans text-sm uppercase tracking-wider text-orww-ink-mute mb-2">Topic</p>
+      <h1 class="font-serif text-4xl sm:text-5xl text-orww-navy">Letitia Carson, 1845–1888</h1>
+    </header>
+
+    {/* TODO v1.1 — Bob to supply canonical primary-source hero (Soap Creek claim survey, DLC filing scan, or equivalent). The Alison Saar woodcut is rights-restricted to 200 dpi thumbnail and is not used here. */}
+    <TopicHero
+      alt="Primary-source document scan placeholder for Letitia Carson — hero image pending Bob's selection of a public-domain primary source (Soap Creek DLC filing or equivalent)."
+      caption="Letitia Carson — first Black woman to file a Donation Land Claim in Oregon, 1845."
+      placeholder={true}
+    />
+
+    <section class="max-w-measure prose-orww">
+      <p>
+        Letitia Carson came to Oregon overland in 1845, gave birth on the trail, and filed a Donation Land Claim on Soap Creek in 1847 — likely the first Black woman to do so under the federal program that opened Oregon to white settlement. Her common-law husband David Carson died in 1852. The administrator of his estate, Greenberry Smith, attempted to seize the claim and the livestock Letitia had bought with her own labor. Letitia sued. <em>Carson v. Smith</em>, tried in 1854 and decided in 1857, is the case that established Letitia's right to her own property, her own children, and the proceeds of the family ranch — won by a Black woman in a territory whose laws explicitly forbade Black people from owning property. She lived another thirty-one years on her Douglas County homestead, dying in 1888. Bob Zybach has been building the most comprehensive single archive of primary-source material on Letitia's life since 2014, in conjunction with novelist Jane Kirkpatrick's <em>A Light in the Wilderness</em>. The archive contains roughly 200 primary documents from North Carolina (1824) through Douglas County (1922), supporting an in-progress biography that Bob is writing.
+      </p>
+    </section>
+
+    <section class="mt-12 max-w-measure">
+      <h2 class="font-serif text-2xl text-orww-navy mb-6 pb-2 border-b border-orww-rule">
+        The archive
+      </h2>
+      <SubsectionList items={subsections} />
+    </section>
+
+    <LicensingCTA>
+      The Letitia Carson primary-source archive is one of the most complete single research resources on her life and case. For academic licensing, documentary use, educational curriculum development, or substantive collaboration on the in-progress biography, contact Bob Zybach directly.
+    </LicensingCTA>
+  </article>
+</BaseLayout>

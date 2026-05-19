@@ -1,0 +1,33 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = 'Reference Desk — orww.store';
+const description = 'The ORWW Reference Librarian is in development — an AI assistant trained on Bob\'s archive, designed to help researchers, journalists, teachers, and the curious navigate the work directly.';
+---
+<BaseLayout title={title} description={description}>
+  <article class="mx-auto max-w-measure px-4 sm:px-6 py-12 prose-orww">
+    <p class="font-sans text-sm uppercase tracking-wider text-orww-ink-mute mb-2">Coming soon</p>
+    <h1 class="text-4xl sm:text-5xl mb-6">The ORWW Reference Desk</h1>
+
+    <p class="text-lg leading-relaxed">
+      The <strong class="text-orww-ink">ORWW Reference Librarian</strong> is in development — an AI assistant trained on Bob Zybach's archive, designed to help researchers, journalists, teachers, and the curious navigate the work directly. It will know the references, the maps, the oral histories, and the documentary record. It will be able to answer "What does ORWW have on the 1933 Tillamook Burn?" or "Where in the Letitia Carson archive is the original 1854 case file?" and point you to the canonical source.
+    </p>
+
+    <p>
+      In the meantime, the canonical archive at <a href="http://www.orww.org/">www.orww.org</a> is browseable directly. The topic pages on this site — <a href="/elliott/">Elliott</a>, <a href="/osbornes/">Osbornes</a>, <a href="/letitia-carson/">Letitia Carson</a>, <a href="/umpqua-1828/">1828 Umpqua Memorial</a> — provide deep links to the specific sections most commonly asked about.
+    </p>
+
+    <p>
+      For specific reference questions that the existing archive doesn't obviously answer, the best route today is to contact Bob directly.
+    </p>
+
+    <div class="mt-8">
+      <a
+        href="/contact/"
+        class="inline-block font-sans text-sm bg-orww-navy text-orww-paper px-5 py-3 no-underline hover:bg-orww-navy-dark"
+      >
+        Contact Bob →
+      </a>
+    </div>
+  </article>
+</BaseLayout>

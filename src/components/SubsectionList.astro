@@ -1,0 +1,35 @@
+---
+export interface SubsectionItem {
+  name: string;
+  description: string;
+  deepLink?: string;
+}
+
+export interface Props {
+  items: SubsectionItem[];
+}
+
+const { items } = Astro.props;
+---
+<ul class="list-none p-0 m-0 space-y-6">
+  {items.map((item) => (
+    <li class="border-l-2 border-orww-rule pl-4">
+      <p class="leading-relaxed">
+        <strong class="font-serif font-semibold text-orww-ink">{item.name}</strong>
+        <span class="text-orww-ink-mute"> — </span>
+        <span>{item.description}</span>
+      </p>
+      {item.deepLink && (
+        <p class="mt-2 font-sans text-sm">
+          <a
+            href={item.deepLink}
+            class="text-orww-oxblood no-underline hover:underline hover:text-orww-navy"
+            rel="external"
+          >
+            Deep link to orww.org →
+          </a>
+        </p>
+      )}
+    </li>
+  ))}
+</ul>

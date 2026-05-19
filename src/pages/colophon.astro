@@ -1,0 +1,42 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = 'Colophon — orww.store';
+const description = 'Credits, methodology, and technology behind www.orww.store — a modern presentation layer over the ORWW archive at www.orww.org.';
+---
+<BaseLayout title={title} description={description}>
+  <article class="mx-auto max-w-measure px-4 sm:px-6 py-12 prose-orww text-orww-ink-mute">
+    <h1 class="text-3xl sm:text-4xl mb-6 text-orww-navy">Colophon</h1>
+
+    <h2 class="text-orww-navy">About this presentation</h2>
+    <p>
+      This site, www.orww.store, is a modern presentation layer over selected portions of the ORWW archive at <a href="http://www.orww.org/">www.orww.org</a>. It was built in May 2026 as a demonstration project, with the express purpose of showing how thirty years of educational fieldwork could be presented in a way that's discoverable, navigable, and inviting to readers who are not already familiar with Bob Zybach's work. The full ORWW archive at www.orww.org remains the canonical source. This site links back to that archive deeply and often.
+    </p>
+
+    <h2 class="text-orww-navy">Authors and credits</h2>
+    <p>
+      <strong class="text-orww-ink">Content:</strong> Bob Zybach (Oregon Websites and Watersheds Project / NW Maps Co.), with editorial framing by Dave Sullivan (OASTL).
+    </p>
+    <p>
+      <strong class="text-orww-ink">Presentation, code, and AI-assisted assembly:</strong> Dave Sullivan working with Claude (Anthropic).
+    </p>
+    <p>
+      The chronological project-row pattern, the navy-and-oxblood palette, the photo-confident documentary register, the citation discipline, and the dual-imprint footer are all preserved from Bob's original site design — modernized in form but unchanged in spirit.
+    </p>
+
+    <h2 class="text-orww-navy">Technology</h2>
+    <p>
+      Built with <a href="https://astro.build/">Astro</a>. Hosted on <a href="https://pages.cloudflare.com/">Cloudflare Pages</a>. Source code on <a href="https://github.com/dave-schooltrustlands/orww-store">GitHub</a>. Typography is set in <strong class="text-orww-ink">IBM Plex Serif</strong> (body and headings) with <strong class="text-orww-ink">IBM Plex Sans</strong> for chrome and captions. The site is HTTPS by default, responsive on phones and tablets, and uses no analytics tracking beyond Cloudflare's built-in aggregate visitor counts.
+    </p>
+
+    <h2 class="text-orww-navy">Version</h2>
+    <p>
+      <strong class="text-orww-ink">v1.0</strong> — first published 2026-05-19 at www.orww.store.
+    </p>
+
+    <h2 class="text-orww-navy">Footer attribution</h2>
+    <p class="italic">
+      © 1996–2026 Oregon Websites and Watersheds Project, Inc. &amp; NW Maps Co. Site by Dave Sullivan and the OASTL working group. The canonical ORWW archive is at <a href="http://www.orww.org/">www.orww.org</a> and has been since 1997.
+    </p>
+  </article>
+</BaseLayout>

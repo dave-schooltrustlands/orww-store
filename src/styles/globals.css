@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: theme('fontFamily.serif');
+    background-color: theme('colors.orww-paper');
+    color: theme('colors.orww-ink');
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-size: 18px;
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: theme('fontFamily.serif');
+    color: theme('colors.orww-navy');
+    font-weight: 600;
+  }
+
+  a {
+    color: theme('colors.orww-navy');
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  a:hover {
+    color: theme('colors.orww-oxblood');
+  }
+
+  a:visited {
+    color: theme('colors.orww-navy');
+  }
+}
+
+@layer components {
+  .prose-orww p {
+    margin-bottom: 1rem;
+  }
+
+  .prose-orww h2 {
+    font-size: 1.75rem;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .prose-orww h3 {
+    font-size: 1.375rem;
+    color: theme('colors.orww-ink');
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+  }
+}

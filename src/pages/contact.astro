@@ -1,0 +1,53 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import LicensingCTA from '../components/LicensingCTA.astro';
+
+const title = 'Contact and licensing — orww.store';
+const description = 'Four routes for inquiries to Bob Zybach and the Oregon Websites & Watersheds Project: educational use, commercial licensing, expert witness, and speaking / consultation.';
+---
+<BaseLayout title={title} description={description} activeNav="contact">
+  <article class="mx-auto max-w-measure px-4 sm:px-6 py-12 prose-orww">
+    <h1 class="text-4xl sm:text-5xl mb-3">Contact and licensing inquiries</h1>
+    <p class="text-lg leading-relaxed">
+      This page consolidates routes to Bob for the four kinds of inquiries the site might generate.
+    </p>
+
+    <h2>Educational use (free with attribution)</h2>
+    <p>
+      K-12 teachers, university faculty, students, researchers, journalists writing for non-commercial outlets, libraries and museums for non-commercial exhibits — these uses of ORWW material are generally welcomed with attribution. Cite ORWW as the source, link to the specific page when web-publishing, and Bob is happy to provide higher-resolution image files on request.
+    </p>
+
+    <h2>Commercial licensing (NW Maps Co.)</h2>
+    <p>
+      Documentary producers, commercial publishers, advertising agencies, branded-content producers, fee-for-service publishers, and any commercial use of ORWW photographs, maps, or substantive research should contact NW Maps Co. directly. Per-use licensing is available; volume agreements can be arranged for ongoing relationships.
+    </p>
+
+    <h2>Expert witness work</h2>
+    <p>
+      Bob is available for expert-witness engagements on wildfire-causation cases (utility-cause and other), forest-management malpractice cases, school-trust-lands cases, and historical-baseline disputes. His PhD-grade pre-European-settlement fire-history baseline for the Oregon Coast Range, 1491–1951, is the kind of credentialed historical asset that is rarely available in litigation contexts. Day rates and retainer terms by inquiry.
+    </p>
+
+    <h2>Speaking, teaching, and consultation</h2>
+    <p>
+      Conference talks, university guest lectures, continuing-education courses for forestry professionals, podcast and broadcast appearances, and substantive consulting engagements. Bob has been an on-camera expert in <em>A Birthright Forever</em> (2024) and other documentary work; his May 2025 long-form video on the East Lane County wildfires demonstrated 21-minute average viewing time on a 59-minute runtime, a real audience engagement metric.
+    </p>
+
+    <h2>Contact information</h2>
+    <div class="bg-orww-paper-soft border border-orww-rule p-6 mt-4 not-prose">
+      <p class="font-serif">
+        <strong>Bob Zybach, PhD</strong><br />
+        ORWW Program Manager / NW Maps Co.<br />
+        Cottage Grove, Oregon
+      </p>
+      <p class="font-sans text-sm text-orww-ink-mute italic mt-4">
+        [Bob's email — to be confirmed]<br />
+        [Bob's phone — to be confirmed]<br />
+        [Postal address — to be confirmed]
+      </p>
+    </div>
+
+    <LicensingCTA>
+      For most inquiries, email is the fastest route. Bob personally reads and replies to inbound mail. Expect a thoughtful answer within a few days.
+    </LicensingCTA>
+  </article>
+</BaseLayout>

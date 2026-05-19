@@ -1,0 +1,69 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import TopicHero from '../components/TopicHero.astro';
+import SubsectionList from '../components/SubsectionList.astro';
+import LicensingCTA from '../components/LicensingCTA.astro';
+
+const title = '1828 Umpqua Memorial — orww.store';
+const description = 'The reconstructed burial site of the Smith-Jackson-Sublette brigade members killed in the July 1828 Umpqua massacre. Memorial Stone dedicated October 28, 2023.';
+
+const subsections = [
+  {
+    name: 'Primary sources',
+    description: 'McLeod\'s brigade journal (September 6 to December 10, 1828); McLoughlin\'s dispatch (August 10, 1828); Dale 1918 (classic Smith historiography); 43 reference PDFs in total.',
+    deepLink: 'http://www.orww.org/1828_Umpqua_Memorial/References/',
+  },
+  {
+    name: 'Reports',
+    description: 'Schneider 2023 (20 MB), Zybach-JSS 2023 series (8–14 MB each), Zybach-ORWW November 2023 comprehensive report (12 MB).',
+    deepLink: 'http://www.orww.org/1828_Umpqua_Memorial/Reports/',
+  },
+  {
+    name: 'Maps',
+    description: '9 PDFs of large-format reconstruction maps (Zybach-Grindberg JSS 2023 series; Schneider 2023).',
+    deepLink: 'http://www.orww.org/1828_Umpqua_Memorial/Maps/',
+  },
+  {
+    name: '2023 Memorial Dedication',
+    description: 'Photographs from the October 28, 2023 dedication; the Smith River and Bolon Island Historical Marker materials.',
+    deepLink: 'http://www.orww.org/1828_Umpqua_Memorial/Historical_Markers/',
+  },
+  {
+    name: 'JSS 2023 Rendezvous',
+    description: 'The four-day field expedition (Hoopa Valley → Winchuck → Umpqua → Fort Vancouver → London) with guidebooks for each day.',
+    deepLink: 'http://www.orww.org/1828_Umpqua_Memorial/JSS_2023_Rendezvous/',
+  },
+];
+---
+<BaseLayout title={title} description={description} activeNav="topics">
+  <article class="mx-auto max-w-wide px-4 sm:px-6 py-10">
+    <header class="mb-8 max-w-measure">
+      <p class="font-sans text-sm uppercase tracking-wider text-orww-ink-mute mb-2">Topic</p>
+      <h1 class="font-serif text-4xl sm:text-5xl text-orww-navy">1828 Umpqua Memorial / Jedediah Smith</h1>
+    </header>
+
+    {/* TODO v1.1 — Bob to supply 2023 Memorial dedication photo or archival illustration of the Smith brigade's California-to-Oregon trek. */}
+    <TopicHero
+      alt="Photograph from the October 28, 2023 dedication of the Smith, Jackson & Sublette Burial Site — hero image pending Bob's selection."
+      caption="Smith, Jackson & Sublette Burial Site, dedicated October 28, 2023, near Reedsport, Oregon."
+      placeholder={true}
+    />
+
+    <section class="max-w-measure prose-orww">
+      <p>
+        On the morning of July 14, 1828, fifteen members of Jedediah Smith's California-to-Oregon trapping brigade were killed near the mouth of the Umpqua River by a Kelawatset war party. Smith and three survivors walked north to Fort Vancouver to seek aid. Hudson's Bay Company brigade leader Alexander Roderick McLeod, dispatched by John McLoughlin, returned south the following month to recover the brigade's furs, locate the dead, and bury them. McLeod's journal of that brigade — the primary documentary source on the burial — describes the site in detail but the location was lost to historical memory for nearly two centuries. Beginning in 2000–2001, Wayne Knauf, Don Whereat, James Auld, Al LePage, Portia Harris, and Tom Hedgepeth conducted the field-mapping work that re-located the burial site. Bob Zybach picked up the project in 2023, organizing the documentary record into a comprehensive memorial proposal that was accepted by the Oregon Commission on Historic Cemeteries on March 29, 2023. The Memorial Stone was dedicated on October 28, 2023. The Smith, Jackson & Sublette Burial Site is now formally listed as an Oregon Historic Cemetery — the first and only such listing for a fur-trade-era event in the state.
+      </p>
+    </section>
+
+    <section class="mt-12 max-w-measure">
+      <h2 class="font-serif text-2xl text-orww-navy mb-6 pb-2 border-b border-orww-rule">
+        The archive
+      </h2>
+      <SubsectionList items={subsections} />
+    </section>
+
+    <LicensingCTA>
+      The 1828 Umpqua Memorial project is the most recent of Bob's flagship topics and the only one with active fieldwork still underway. For documentary licensing, educational use, expert consultation on the Smith brigade history, or collaboration on continuing fieldwork, contact Bob Zybach directly.
+    </LicensingCTA>
+  </article>
+</BaseLayout>

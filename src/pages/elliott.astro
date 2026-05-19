@@ -1,0 +1,84 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import TopicHero from '../components/TopicHero.astro';
+import SubsectionList from '../components/SubsectionList.astro';
+import LicensingCTA from '../components/LicensingCTA.astro';
+import { Image } from 'astro:assets';
+import elliottHero from '../assets/images/elliott-hero.jpg';
+
+const title = 'Elliott State Forest — orww.store';
+const description = 'Oregon\'s first state forest, granted to the Common School Fund in 1859 and decoupled from it in 2022. ORWW\'s Elliott archive is the deepest historical record of the forest in public hands.';
+
+const subsections = [
+  {
+    name: 'The Giesy Plan Alternative (2017)',
+    description: 'The 37-page proposal Wayne Giesy and Bob Zybach submitted to the Oregon State Land Board, including the 2017 PowerPoint slides and supporting analysis.',
+    deepLink: 'http://www.orww.org/Elliott_Forest/Research/Giesy_Plan/index.html',
+  },
+  {
+    name: 'References Archive (61 PDFs)',
+    description: 'Academic articles, agency records, historical documents, legal filings, news coverage. Five thematic categories. The most complete public archive of Elliott documentation.',
+    deepLink: 'http://www.orww.org/Elliott_Forest/References/index.html',
+  },
+  {
+    name: 'Maps and Boundaries',
+    description: '57 maps + 10 PDFs documenting the Elliott\'s surveyed boundaries, stream systems, topography, fire history, habitat zones, and ownership history.',
+    deepLink: 'http://www.orww.org/Elliott_Forest/Maps/index.html',
+  },
+  {
+    name: 'Oral Histories',
+    description: 'Jerry Phillips (1925–2021), the Elliott\'s last continuously-employed timber-management forester, in extended interviews recorded Fall 2017. Plus Aileen Rickard and Lionel Youst on related Coos County and forest-history material.',
+    deepLink: 'http://www.orww.org/Elliott_Forest/History/',
+  },
+  {
+    name: 'Recreation and Field Trips',
+    description: 'The SWOCC F 251 field-trip curriculum, recreation-management plans (2018, 2019), and 2020 road inventory.',
+    deepLink: 'http://www.orww.org/Elliott_Forest/Recreation/index.html',
+  },
+  {
+    name: 'Photographs',
+    description: 'Historical and contemporary, with credits to the Gould family, Roger Ott, David McClay, and Lionel Youst.',
+    deepLink: 'http://www.orww.org/Elliott_Forest/Photos/index.html',
+  },
+];
+---
+<BaseLayout title={title} description={description} activeNav="topics">
+  <article class="mx-auto max-w-wide px-4 sm:px-6 py-10">
+    <header class="mb-8 max-w-measure">
+      <p class="font-sans text-sm uppercase tracking-wider text-orww-ink-mute mb-2">Topic</p>
+      <h1 class="font-serif text-4xl sm:text-5xl text-orww-navy">Elliott State Forest</h1>
+    </header>
+
+    <figure class="mb-10">
+      <Image
+        src={elliottHero}
+        alt="Elliott State Forest canopy"
+        widths={[1200, 1600, 2000]}
+        sizes="(min-width: 1024px) 1024px, 100vw"
+        format="webp"
+        quality={80}
+        class="w-full h-auto"
+      />
+      <figcaption class="mt-3 text-center font-sans italic text-orww-ink-mute text-sm max-w-measure mx-auto">
+        Elliott State Forest — Oregon's first state forest, granted to the Common School Fund at statehood in 1859.
+      </figcaption>
+    </figure>
+
+    <section class="max-w-measure prose-orww">
+      <p>
+        The Elliott State Forest is the longest-running test case in American school-trust history of what happens when a state quietly disconnects a beneficiary-named trust from its beneficiaries. Granted to Oregon's Common School Fund at statehood in 1859 — the largest single contiguous block of Oregon's federal school-lands grant — the Elliott was managed for school revenue for 125 years before the State Land Board, in 2017, voted to sell the entire forest to a private timber company for $221 million. The decision was reversed at the same Land Board meeting after Wayne Giesy and Bob Zybach presented the Giesy Plan Alternative, a structured proposal that kept the forest in public hands. In 2022, the State Legislature decoupled the Elliott from the Common School Fund entirely, paying a one-time $221 million settlement to the Fund in exchange for moving the forest's revenue obligations elsewhere. The Elliott is now operated by Oregon State University as the Elliott State Research Forest. The legal adequacy of the 2022 decoupling — whether $221 million actually represented the present value of the future trust revenue the Elliott would have generated — is the central live question in the Oregon school-trust litigation Bob and his colleagues continue to follow.
+      </p>
+    </section>
+
+    <section class="mt-12 max-w-measure">
+      <h2 class="font-serif text-2xl text-orww-navy mb-6 pb-2 border-b border-orww-rule">
+        The archive
+      </h2>
+      <SubsectionList items={subsections} />
+    </section>
+
+    <LicensingCTA>
+      For commercial licensing of Elliott photographs and maps, expert-witness consultation on Elliott matters or related school-trust questions, or substantive collaboration on Elliott documentary work, contact Bob Zybach directly. Educational and nonprofit uses are generally welcomed with attribution.
+    </LicensingCTA>
+  </article>
+</BaseLayout>

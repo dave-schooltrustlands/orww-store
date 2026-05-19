@@ -1,0 +1,69 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import TopicHero from '../components/TopicHero.astro';
+import SubsectionList from '../components/SubsectionList.astro';
+import LicensingCTA from '../components/LicensingCTA.astro';
+
+const title = 'The Osbornes Project — orww.store';
+const description = 'GPS-documented panoramic photographs from 1930s fire-lookout towers paired with contemporary repeats — a landscape-change time series across ten Oregon counties.';
+
+const subsections = [
+  {
+    name: 'Douglas County',
+    description: 'The deepest single county archive. Abbott Butte and related lookouts; sub-indexed by river basin.',
+    deepLink: 'http://www.orww.org/Osbornes_Project/Douglas/Index.html',
+  },
+  {
+    name: 'Kalmiopsis Wilderness (Curry / Josephine)',
+    description: 'The original 2006 launch material; Chetco Basin QTVR panoramas from the Biscuit Fire aftermath.',
+    deepLink: 'http://www.orww.org/Osbornes_Project/Kalmiopsis_Wilderness/index.html',
+  },
+  {
+    name: 'Linn County',
+    description: '35 sub-pages including the 2007 Owl Ridge Trails Report.',
+    deepLink: 'http://www.orww.org/Osbornes_Project/Linn/index.html',
+  },
+  {
+    name: 'Other counties',
+    description: 'Benton, Curry, Jackson, Josephine, Klamath, Lane, Lincoln, Polk. Some county indices are still under expansion. The main county grid is the entry point.',
+    deepLink: 'http://www.orww.org/Osbornes_Project/index.html',
+  },
+  {
+    name: 'References and methodology',
+    description: 'Arnst 1985 (with Houye 2000 introduction), Griffith 1945 (Osborne camera design), Petersen and McMurray 1994 (Evergreen Magazine), Zybach 2020 (Oregon Fish & Wildlife Journal).',
+    deepLink: 'http://www.orww.org/Osbornes_Project/References/',
+  },
+];
+---
+<BaseLayout title={title} description={description} activeNav="topics">
+  <article class="mx-auto max-w-wide px-4 sm:px-6 py-10">
+    <header class="mb-8 max-w-measure">
+      <p class="font-sans text-sm uppercase tracking-wider text-orww-ink-mute mb-2">Topic</p>
+      <h1 class="font-serif text-4xl sm:text-5xl text-orww-navy">The Osbornes Project</h1>
+    </header>
+
+    {/* TODO v1.1 — Bob to supply canonical paired 1933/now Osborne panorama for hero. */}
+    <TopicHero
+      alt="Paired 1933 / contemporary Osborne panoramic photograph — hero image pending Bob's selection."
+      caption="A representative Osborne panoramic photograph paired with its contemporary repeat. The 1933 originals are large-format glass-plate panoramas; contemporary repeats are made on foot from the same elevation and orientation."
+      placeholder={true}
+    />
+
+    <section class="max-w-measure prose-orww">
+      <p>
+        Between 1933 and 1940, the U.S. Forest Service equipped fire-lookout towers across the western states with rotating panoramic cameras designed by Forest Service engineer William Osborne. The Osbornes — large-format glass-plate panoramas, each rotating through 360 degrees from a known elevation — captured an unrepeatable visual baseline of the Pacific Northwest's forests at the moment before fire suppression, industrial logging, and twentieth-century forest management transformed them. Most of those original glass plates survived. Beginning in 2004, Bob Zybach and a rotating team of students, foresters, and field photographers have been returning to the original Osborne lookout sites with GPS coordinates and contemporary panoramic equipment, photographing the same view from the same elevation at the same orientation. The result is the Osbornes Project: a time-series of landscape change that lets a viewer see, paired in a single side-by-side image, what 90 years of fire management, forestry policy, and natural succession have done to a specific Oregon mountainside. The 2020 consolidation of the project, supported by a donation from B. Bond Starker of Starker Forests, organized the archive by county and produced the comprehensive county-grid index on orww.org.
+      </p>
+    </section>
+
+    <section class="mt-12 max-w-measure">
+      <h2 class="font-serif text-2xl text-orww-navy mb-6 pb-2 border-b border-orww-rule">
+        The archive, by county
+      </h2>
+      <SubsectionList items={subsections} />
+    </section>
+
+    <LicensingCTA>
+      The paired historical/contemporary panoramas are unique research-grade assets. For documentary licensing, publication use, or contract work using the Osbornes methodology in new locations, contact NW Maps Co. directly. Educational and academic uses with attribution are welcomed.
+    </LicensingCTA>
+  </article>
+</BaseLayout>
