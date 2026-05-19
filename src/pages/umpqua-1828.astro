@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import TopicHero from '../components/TopicHero.astro';
+import TextCardHero from '../components/TextCardHero.astro';
 import SubsectionList from '../components/SubsectionList.astro';
 import LicensingCTA from '../components/LicensingCTA.astro';
 
@@ -42,11 +42,10 @@ const subsections = [
       <h1 class="font-serif text-4xl sm:text-5xl text-orww-navy">1828 Umpqua Memorial / Jedediah Smith</h1>
     </header>
 
-    {/* TODO v1.1 — Bob to supply 2023 Memorial dedication photo or archival illustration of the Smith brigade's California-to-Oregon trek. */}
-    <TopicHero
-      alt="Photograph from the October 28, 2023 dedication of the Smith, Jackson & Sublette Burial Site — hero image pending Bob's selection."
-      caption="Smith, Jackson & Sublette Burial Site, dedicated October 28, 2023, near Reedsport, Oregon."
-      placeholder={true}
+    <TextCardHero
+      title="The 1828 Umpqua Memorial"
+      subtitle="Reconstructing the burial site of the Smith-Jackson-Sublette brigade members"
+      dates="July 1828 — October 2023"
     />
 
     <section class="max-w-measure prose-orww">

@@ -1,0 +1,33 @@
+---
+export interface Props {
+  title: string;
+  subtitle: string;
+  dates?: string;
+}
+
+const { title, subtitle, dates } = Astro.props;
+---
+<section
+  class="mb-10 bg-orww-paper-soft border-y border-orww-rule"
+  aria-label={title}
+>
+  <div class="mx-auto max-w-measure flex flex-col items-center justify-center text-center px-6 py-12 sm:py-20 aspect-auto sm:aspect-[16/7]">
+    <p
+      class="font-serif font-semibold text-orww-navy text-3xl sm:text-4xl lg:text-5xl leading-tight"
+      style="font-variant: small-caps; letter-spacing: 0.04em;"
+    >
+      {title}
+    </p>
+    <p class="mt-4 font-serif italic text-orww-oxblood text-lg sm:text-xl leading-snug max-w-measure">
+      {subtitle}
+    </p>
+    {dates && (
+      <p
+        class="mt-5 font-sans text-xs text-orww-ink-mute uppercase"
+        style="letter-spacing: 0.12em;"
+      >
+        {dates}
+      </p>
+    )}
+  </div>
+</section>
