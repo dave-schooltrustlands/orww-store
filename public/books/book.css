@@ -1,0 +1,96 @@
+:root{
+  --ink:#23201a; --muted:#6b6358; --cream:#fbf7ef; --paper:#fffdf8;
+  --green:#2f5d3a; --green-dark:#234a2d; --gold:#b8893b; --rule:#e3dac9;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--cream);color:var(--ink);
+  font-family:Georgia,"Palatino Linotype",Palatino,"Book Antiqua",serif;
+  line-height:1.7;font-size:19px}
+a{color:var(--green-dark)}
+img{max-width:100%;height:auto}
+
+/* ---- top bar ---- */
+.topbar{display:flex;justify-content:space-between;align-items:center;
+  background:var(--green);color:#f5efe0;padding:.6rem 1.1rem;font-size:.95rem}
+.topbar a{color:#f5efe0;text-decoration:none;font-weight:600;letter-spacing:.02em}
+.topbar .tag{font-size:.72rem;text-transform:uppercase;letter-spacing:.12em;
+  background:rgba(255,255,255,.16);padding:.2rem .55rem;border-radius:999px}
+
+/* ---- draft banner ---- */
+.banner{max-width:46rem;margin:1rem auto;background:#fbe7c7;border:1px solid var(--gold);
+  color:#6b4f1d;border-radius:8px;padding:.7rem 1rem;font-size:.9rem;text-align:center;
+  font-family:system-ui,sans-serif}
+
+/* ---- reading column ---- */
+.reading{max-width:44rem;margin:0 auto;padding:1.6rem 1.2rem 4rem}
+.reading h1{font-size:2rem;line-height:1.2;color:var(--green-dark);margin:.2rem 0 .4rem}
+.reading h2{font-size:1.4rem;color:var(--green-dark);margin:2.2rem 0 .5rem;
+  border-bottom:1px solid var(--rule);padding-bottom:.2rem}
+.reading h3{font-size:1.12rem;color:var(--green-dark);margin:1.6rem 0 .3rem}
+.reading h4{font-size:1rem;color:var(--green-dark);margin:1.3rem 0 .3rem;font-style:italic}
+.reading p{margin:0 0 1.05rem}
+.reading ul,.reading ol{margin:0 0 1.05rem;padding-left:1.4rem}
+.reading li{margin:0 0 .4rem}
+.reading hr{border:none;border-top:1px solid var(--rule);margin:2rem 0}
+blockquote{margin:1.2rem 0;padding:.4rem 0 .4rem 1.1rem;border-left:3px solid var(--gold);
+  color:#403a30;font-style:italic}
+
+/* author / subtitle line under title */
+.booklede{color:var(--muted);font-size:1.02rem;margin:.1rem 0 1.4rem;font-style:italic}
+
+/* ---- figures ---- */
+figure{margin:1.9rem 0;text-align:center}
+figure img{border:1px solid var(--rule);box-shadow:0 1px 6px rgba(0,0,0,.10);background:var(--paper)}
+figcaption{font-size:.85rem;color:var(--muted);font-style:italic;
+  margin-top:.5rem;line-height:1.5;text-align:left}
+
+/* figure plate atop each book */
+.platebox{margin:1.4rem 0 2.4rem;border-top:1px solid var(--rule);
+  border-bottom:1px solid var(--rule);padding:1.2rem 0}
+.platebox .plate-lede{color:var(--muted);font-size:.9rem;margin:.1rem 0 1.2rem;
+  font-family:system-ui,sans-serif;font-style:italic}
+.platebox figure{margin:1.4rem 0}
+
+/* ---- table of contents (pandoc #TOC) ---- */
+nav.toc-box{background:var(--paper);border:1px solid var(--rule);border-radius:8px;
+  padding:1rem 1.2rem;margin:0 0 2rem}
+nav.toc-box::before{content:"Contents";display:block;
+  font-family:system-ui,sans-serif;font-size:.8rem;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--muted);margin-bottom:.5rem}
+.toc-box ul{list-style:none;padding-left:0;margin:0}
+.toc-box li{border-bottom:1px solid var(--rule);padding:.42rem 0}
+.toc-box li:last-child{border-bottom:none}
+.toc-box a{font-weight:600;text-decoration:none;color:var(--green-dark)}
+.toc-box a:hover{text-decoration:underline}
+
+/* ---- footnotes ---- */
+.footnotes{font-size:.82rem;color:var(--muted);margin-top:2.2rem;
+  border-top:1px solid var(--rule);padding-top:1rem}
+.footnotes hr{display:none}
+.footnotes ol{padding-left:1.3rem}
+.footnotes li{margin:0 0 .5rem}
+.footnote-ref{text-decoration:none;font-weight:600;color:var(--green)}
+
+/* ---- back link + foot ---- */
+.backlink{font-family:system-ui,sans-serif;font-size:.9rem;margin:0 0 1rem}
+.backlink a{color:var(--green);text-decoration:none}
+.foot{border-top:1px solid var(--rule);color:var(--muted);font-size:.82rem;
+  text-align:center;padding:1.6rem;font-family:system-ui,sans-serif}
+
+/* ---- index page ---- */
+.hero{max-width:48rem;margin:0 auto;padding:2.4rem 1.2rem .6rem;text-align:center}
+.hero h1{color:var(--green-dark);font-size:2.3rem;margin:.2rem 0}
+.hero p{color:var(--muted);font-size:1.05rem;max-width:38rem;margin:.4rem auto}
+.books{max-width:50rem;margin:1.4rem auto;display:grid;grid-template-columns:1fr 1fr;gap:1.1rem;padding:0 1.2rem}
+@media(max-width:640px){.books{grid-template-columns:1fr}}
+.book{display:block;background:var(--paper);border:1px solid var(--rule);border-radius:10px;
+  padding:1.2rem 1.3rem;text-decoration:none;color:var(--ink);box-shadow:0 1px 5px rgba(0,0,0,.06)}
+.book:hover{border-color:var(--green);box-shadow:0 3px 12px rgba(0,0,0,.12)}
+.book h2{color:var(--green-dark);margin:.1rem 0 .3rem;font-size:1.25rem}
+.book .ed{font-family:system-ui,sans-serif;font-size:.72rem;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--gold);font-weight:700}
+.book .sub{color:var(--muted);font-size:.9rem;line-height:1.5;margin-top:.3rem}
+.group-label{max-width:50rem;margin:1.8rem auto .2rem;padding:0 1.4rem;
+  font-family:system-ui,sans-serif;font-size:.78rem;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--muted)}
